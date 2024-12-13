@@ -1,88 +1,54 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
+import { useState, useEffect } from 'react';
+import { Sparkles } from 'lucide-react';
 
-export default function Home() {
+const TapToEarn = () => {
+  const [points, setPoints] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  
+  const handleTap = () => {
+    setPoints(prev => prev + 1);
+    setIsAnimating(true);
+  };
+
+  useEffect(() => {
+    if (isAnimating) {
+      const timer = setTimeout(() => setIsAnimating(false), 200);
+      return () => clearTimeout(timer);
+    }
+  }, [isAnimating]);
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-Olujola Ayomide
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-b from-blue-500 to-purple-600 flex flex-col items-center justify-center p-4">
+      {/* Score Display */}
+      <div className="bg-white/20 backdrop-blur-lg rounded-xl p-4 mb-8 text-center">
+        <h1 className="text-4xl font-bold text-white mb-2">Points</h1>
+        <p className="text-6xl font-bold text-white">{points}</p>
+      </div>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+      {/* Tap Button */}
+      <button
+        onClick={handleTap}
+        className={`
+          relative w-48 h-48 rounded-full bg-gradient-to-r from-pink-500 to-yellow-500
+          shadow-xl active:scale-95 transition-all duration-200
+          flex items-center justify-center
+          ${isAnimating ? 'scale-105' : 'scale-100'}
+        `}
+      >
+        <div className="absolute inset-0 rounded-full bg-white/20 backdrop-blur-sm" />
+        <div className="relative flex flex-col items-center">
+          <Sparkles className="w-12 h-12 text-white mb-2" />
+          <span className="text-xl font-bold text-white">TAP!</span>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </button>
+
+      {/* Points Per Second */}
+      <div className="mt-8 text-center text-white/80">
+        <p className="text-lg">Tap the button to earn points!</p>
+      </div>
     </div>
   );
-}
+};
+
+export default TapToEarn;
