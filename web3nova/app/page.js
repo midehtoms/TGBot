@@ -22,7 +22,7 @@ const TapToEarn = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-500 to-purple-600 flex flex-col items-center justify-center p-4">
       {/* Score Display */}
       <div className="bg-white/20 backdrop-blur-lg rounded-xl p-4 mb-8 text-center">
-        <h1 className="text-4xl font-bold text-white mb-2">Points</h1>
+        <h1 className="text-4xl font-bold text-white mb-2">Point</h1>
         <p className="text-6xl font-bold text-white">{points}</p>
       </div>
 
