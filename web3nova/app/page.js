@@ -49,14 +49,14 @@ const TapToEarn = () => {
       {/* Connect Wallet Button */}
       <button
         onClick={connectWallet}
-        className="absolute top-4 right-4 px-4 py-2 bg-green-400 text-white rounded-lg border border-white/40 shadow-md hover:opacity-90 transition duration-300 flex items-center gap-2"
+        className="absolute top-4 right-4 px-4 py-2 bg-green-400 text-white rounded-lg border border-white/40 shadow-md hover:opacity-90 transition duration-300 flex items-center gap-2 sm:top-8 sm:right-8"
       >
         <Wallet className="w-6 h-6 text-white" />
         Connect Wallet
       </button>
 
       {/* User Section (USER Icon + Panda Icon + User Score) */}
-      <div className="absolute top-4 left-4 px-4 py-2 bg-white/20 backdrop-blur-lg rounded-lg border border-white/40 flex items-center gap-2">
+      <div className="absolute top-4 left-4 px-4 py-2 bg-white/20 backdrop-blur-lg rounded-lg border border-white/40 flex items-center gap-2 sm:top-8 sm:left-8 sm:px-6">
         {/* User Icon */}
         <User className="w-6 h-6 text-white" />
         <p className="text-xl font-bold text-white">USER</p>
@@ -100,7 +100,7 @@ const TapToEarn = () => {
       </button>
 
       {/* Counter Section (100/100) Below the Tap Button */}
-      <div className="absolute bottom-20 left-4 px-4 py-2 bg-white/20 backdrop-blur-lg rounded-lg border border-white/40 flex items-center gap-2">
+      <div className="absolute bottom-20 left-4 px-4 py-2 bg-white/20 backdrop-blur-lg rounded-lg border border-white/40 flex items-center gap-2 sm:bottom-16 sm:left-8 sm:px-6">
         {/* Panda Icon */}
         <img src="https://www.pngkit.com/png/full/0-6264_panda-bear-panda-head-png.png" alt="Panda" className="w-6 h-6" />
         <p className="text-xl font-bold text-green-400">
@@ -109,7 +109,7 @@ const TapToEarn = () => {
       </div>
 
       {/* Upgrade Section (Right side of 100/100 Section) */}
-      <div className="absolute bottom-20 right-4 px-4 py-2 bg-white/20 backdrop-blur-lg rounded-lg border border-white/40 flex items-center gap-2">
+      <div className="absolute bottom-20 right-4 px-4 py-2 bg-white/20 backdrop-blur-lg rounded-lg border border-white/40 flex items-center gap-2 sm:bottom-16 sm:right-8 sm:px-6">
         <p className="text-xl font-bold text-green-400">UPGRADE</p>
       </div>
     </div>
