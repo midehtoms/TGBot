@@ -5,9 +5,9 @@ import { Sparkles } from 'lucide-react';
 const TapToEarn = () => {
   const [points, setPoints] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-
+  
   const handleTap = () => {
-    setPoints((prev) => prev + 1);
+    setPoints(prev => prev + 1);
     setIsAnimating(true);
   };
 
@@ -22,7 +22,7 @@ const TapToEarn = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-500 to-purple-600 flex flex-col items-center justify-center p-4">
       {/* Score Display */}
       <div className="bg-white/20 backdrop-blur-lg rounded-xl p-4 mb-8 text-center">
-        <h1 className="text-4xl font-bold text-white mb-2">Point</h1>
+        <h1 className="text-4xl font-bold text-white mb-2">Points</h1>
         <p className="text-6xl font-bold text-white">{points}</p>
       </div>
 
@@ -38,12 +38,7 @@ const TapToEarn = () => {
       >
         <div className="absolute inset-0 rounded-full bg-white/20 backdrop-blur-sm" />
         <div className="relative flex flex-col items-center">
-          {/* Replace Sparkles with an Image */}
-          <img
-            src="/path-to-your-image.png"
-            alt="Tap Icon"
-            className="w-16 h-16 object-contain mb-2"
-          />
+          <Sparkles className="w-12 h-12 text-white mb-2" />
           <span className="text-xl font-bold text-white">TAP!</span>
         </div>
       </button>
