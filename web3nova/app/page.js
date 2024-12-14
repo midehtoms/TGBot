@@ -49,9 +49,10 @@ const TapToEarn = () => {
       {/* Connect Wallet Button */}
       <button
         onClick={connectWallet}
-        className="absolute top-4 right-4 px-4 py-2 bg-green-400 text-white rounded-lg border border-white/40 shadow-md hover:opacity-90 transition duration-300 flex items-center gap-2 sm:top-8 sm:right-8"
+        className="absolute top-4 right-4 px-3 py-1.5 bg-green-400 text-white rounded-lg border border-white/40 shadow-md hover:opacity-90 transition duration-300 flex items-center gap-2 sm:top-8 sm:right-8"
+        style={{ fontSize: '0.75rem' }} // Reducing font size by 1/4
       >
-        <Wallet className="w-6 h-6 text-white" />
+        <Wallet className="w-5 h-5 text-white" /> {/* Reduce icon size */}
         Connect Wallet
       </button>
 
