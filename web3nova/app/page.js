@@ -28,20 +28,17 @@ const TapToEarn = () => {
 
       {/* Tap Button */}
       <button
-        onClick={handleTap}
-        className={`
-          relative w-48 h-48 rounded-full bg-gradient-to-r from-pink-500 to-yellow-500
-          shadow-xl active:scale-95 transition-all duration-200
-          flex items-center justify-center
-          ${isAnimating ? 'scale-105' : 'scale-100'}
-        `}
-      >
-        <div className="absolute inset-0 rounded-full bg-white/20 backdrop-blur-sm" />
-        <div className="relative flex flex-col items-center">
-          <Sparkles className="w-12 h-12 text-white mb-2" />
-          <span className="text-xl font-bold text-white">TAP!</span>
-        </div>
-      </button>
+  onClick={handleTap}
+  className={`
+    relative w-48 h-48 rounded-full shadow-xl active:scale-95 transition-all duration-200
+    flex items-center justify-center 
+    bg-[url('https://img.stablecog.com/insecure/1920w/aHR0cHM6Ly9iLnN0YWJsZWNvZy5jb20vYjQ2MjE3ZTQtN2ZkNS00MGVhLWFkNDMtNzhiYWFjYzcwZTFlLmpwZWc.webp')] 
+    bg-cover bg-center
+  `}
+>
+  <span className="text-xl font-bold text-white">TAP!</span>
+</button>
+
 
       {/* Points Per Second */}
       <div className="mt-8 text-center text-white/80">
