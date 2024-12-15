@@ -59,7 +59,7 @@ const TapToEarn = () => {
       {/* User Section (USER Icon + Panda Icon + User Score) */}
       <div className="absolute top-4 left-4 px-4 py-2 bg-white/20 backdrop-blur-lg rounded-lg border border-white/40 flex items-center gap-2 sm:top-8 sm:left-8 sm:px-6">
         {/* User Icon */}
-        <User className="w-4 h-4 text-white" />
+        <User className="w-4 h-6 text-white" />
         <p className="font-size: 0.75rem; /* 12px */ font-regular text-white">USER</p>
         {/* Panda Icon in front of User Score */}
         <img src="https://www.pngkit.com/png/full/0-6264_panda-bear-panda-head-png.png" alt="Panda" className="w-6 h-6" />
