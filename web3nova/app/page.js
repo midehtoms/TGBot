@@ -50,31 +50,33 @@ const TapToEarn = () => {
       <button
         onClick={connectWallet}
         className="absolute top-4 right-4 px-3 py-1.5 bg-green-400 text-white rounded-lg border border-white/40 shadow-md hover:opacity-90 transition duration-300 flex items-center gap-2 sm:top-8 sm:right-8"
-        style={{ fontSize: '0.75rem' }} // Reduce font size
+        style={{ fontSize: '0.75rem' }} // Reducing font size by 1/4
       >
-        <Wallet className="w-5 h-5 text-white" /> {/* Reduced icon size */}
+        <Wallet className="w-5 h-5 text-white" /> {/* Reduce icon size */}
         Connect Wallet
       </button>
 
       {/* User Section (USER Icon + Panda Icon + User Score) */}
-      <div className="absolute top-4 left-4 px-3 py-1.5 bg-white/20 backdrop-blur-lg rounded-lg border border-white/40 flex flex-col items-center gap-2 sm:top-8 sm:left-8 sm:px-4">
-        {/* Upper Row: User Icon and USER Text */}
-        <div className="flex items-center gap-2">
-          <User className="w-4.5 h-4.5 text-white" /> {/* Reduced icon size */}
-          <p className="text-lg font-bold text-white">USER</p> {/* Reduced font size */}
-        </div>
-
-        {/* Lower Row: Panda Icon and User Score */}
-        <div className="flex items-center gap-2">
-          <img src="https://www.pngkit.com/png/full/0-6264_panda-bear-panda-head-png.png" alt="Panda" className="w-4.5 h-4.5" /> {/* Panda icon */}
-          <p className="text-lg font-bold text-white ml-2">{userScore}</p> {/* User score */}
-        </div>
+      <div className="absolute top-4 left-4 px-4 py-2 bg-white/20 backdrop-blur-lg rounded-lg border border-white/40 flex items-center gap-2 sm:top-8 sm:left-8 sm:px-6">
+        {/* User Icon */}
+        <User className="w-4 h-6 text-white" />
+        <p className="font-size: 0.75rem; /* 12px */ font-regular text-white">USER</p>
+        {/* Panda Icon in front of User Score */}
+        <img src="https://www.pngkit.com/png/full/0-6264_panda-bear-panda-head-png.png" alt="Panda" className="w-6 h-6" />
+        <p className="font-size: 0.75rem; /* 12px */font-bold text-white ml-2">{userScore}</p>
       </div>
 
       {/* Tap Button with Panda Image */}
       <button
         onClick={handleTap}
-        className={`absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full shadow-xl active:scale-95 transition-all duration-200 flex items-center justify-center ${isAnimating ? 'scale-105' : 'scale-100'} bg-[url('https://img.stablecog.com/insecure/1920w/aHR0cHM6Ly9iLnN0YWJsZWNvZy5jb20vYjQ2MjE3ZTQtN2ZkNS00MGVhLWFkNDMtNzhiYWFjYzcwZTFlLmpwZWc.webp')] bg-cover bg-center`}
+        className={`
+          absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2
+          w-48 h-48 rounded-full shadow-xl active:scale-95 transition-all duration-200
+          flex items-center justify-center
+          ${isAnimating ? 'scale-105' : 'scale-100'}
+          bg-[url('https://img.stablecog.com/insecure/1920w/aHR0cHM6Ly9iLnN0YWJsZWNvZy5jb20vYjQ2MjE3ZTQtN2ZkNS00MGVhLWFkNDMtNzhiYWFjYzcwZTFlLmpwZWc.webp')]
+          bg-cover bg-center
+        `}
       >
         <div className="absolute inset-0 rounded-full" />
         <div className="relative flex flex-col items-center">
